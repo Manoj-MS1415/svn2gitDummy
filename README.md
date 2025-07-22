@@ -1,12 +1,13 @@
-		                                                        ###SVN to Git Migration
-⦁	##Step 1 : Create svn repo and get ready with svn protocol based serve
+		                                                        # SVN to Git Migration
+⦁	### Step 1 : Create svn repo and get ready with svn protocol based serve
 
 		e.g.: svnserve -d -c C:/Users/MS1415/Document/svn_archive 
 
 		     This creates svn://localhost through which can access the local svn repo. This creates a demon process.
 
 
-⦁	##Step 2 : Extract users in svn and store it in some file(svn_authors.txt)
+⦁	### Step 2 : Extract users in svn and store it in some file(svn_authors.txt)
+
 		Run this in powershell
 
 			 svn log --quiet svn://localhost |
@@ -19,7 +20,8 @@
 		e.g.: MS1415 = Manoj S <manoj.s@commscope.com>
 
 
-⦁	##Step 3 : Converting svn to git (Run in git bash from here)
+⦁	### Step 3 : Converting svn to git (Run in git bash from here)
+
 	If svn folder is standard
 
 		git svn clone svn://localhost \
@@ -41,7 +43,8 @@
 	Wait until migration completes (it my take some time).
 
 
-⦁	##Step 4 : Converting svn tags to git tags (git assumes it as branch)
+⦁	### Step 4 : Converting svn tags to git tags (git assumes it as branch)
+
 		Move to git repo
 			cd repo_name
 
@@ -68,7 +71,8 @@
 		git checkout -b branch_name tagName
 
 
-⦁	##Step 5 : Converting remote-tracking branches to git branches 
+⦁	### Step 5 : Converting remote-tracking branches to git branches 
+
 		For converting to branches
 		for remote in $(git branch -r | grep -v 'origin/HEAD' | grep -v 'tags/'); do
 		local_branch=${remote#origin/}
@@ -92,7 +96,8 @@
 			git switch branch_name.
 
 
-⦁	##Step 6 : Optionally pushing to remote i.e. GitHub
+⦁	### Step 6 : Optionally pushing to remote i.e. GitHub
+
 		 Add remote
 			git remote add origin https://github.com/Manoj-MS1415/svn2gitDummy.git
 
