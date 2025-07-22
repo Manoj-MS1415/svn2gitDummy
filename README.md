@@ -1,5 +1,5 @@
 		                                                         SVN to Git Migration
-⦁	Step 1 : Create svn repo and get ready with svn protocol based serve
+⦁	Step 1 : Create svn repo and get ready with svn protocol based server
 
 		e.g.: svnserve -d -c C:/Users/MS1415/Document/svn_archive 
 
